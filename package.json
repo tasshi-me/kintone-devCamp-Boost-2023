@@ -1,0 +1,26 @@
+{
+  "name": "devcamp-boost-customize-template",
+  "version": "1.0.0",
+  "description": "devCamp Boost用のkintoneカスタマイズ開発テンプレート",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kintone/devCamp-Boost-customize-template.git"
+  },
+  "keywords": [
+    "kintone"
+  ],
+  "author": {
+    "name": "Cybozu, Inc.",
+    "url": "https://cybozu.co.jp"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kintone/devCamp-Boost-customize-template/issues"
+  },
+  "homepage": "https://github.com/kintone/devCamp-Boost-customize-template#readme"
+}

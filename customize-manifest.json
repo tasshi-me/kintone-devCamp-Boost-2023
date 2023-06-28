@@ -1,0 +1,12 @@
+{
+  "app": "56",
+  "scope": "ALL",
+  "desktop": {
+    "js": ["./dist/my-kintone-customize.umd.js"],
+    "css": []
+  },
+  "mobile": {
+    "js": [],
+    "css": []
+  }
+}

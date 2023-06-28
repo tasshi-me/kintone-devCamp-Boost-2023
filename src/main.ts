@@ -1,4 +1,4 @@
-const hoge = 1;
-
-const Main = 1;
-const obj = { key: 1 };
+kintone.events.on("app.record.index.show", (event) => {
+  console.log("test");
+  console.log(event);
+});

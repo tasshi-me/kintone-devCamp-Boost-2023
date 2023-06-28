@@ -6,6 +6,7 @@ export default defineConfig({
     lib: {
       name: "MyKintoneCustomize",
       entry: resolve(__dirname, "src/main.ts"),
+      fileName: "my-kintone-customize",
     },
   },
 });

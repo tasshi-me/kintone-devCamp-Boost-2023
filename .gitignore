@@ -17,9 +17,7 @@ dist/
 # misc
 **/.DS_Store
 **/.vs
-**/.vscode
-!**/.vscode/tasks.json
-.idea
+**/.idea
 
 # secrets
 .env

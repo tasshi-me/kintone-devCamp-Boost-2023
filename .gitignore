@@ -19,6 +19,9 @@ dist/
 **/.vs
 **/.idea
 
+# customize manifest
+customize-manifest.json
+
 # secrets
 .env
 .envrc

@@ -5,16 +5,19 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "postinstall": "run-s init:*",
     "build": "vite build",
-    "upload": "kintone-customize-uploader ./customize-manifest.json",
+    "upload": "dotenv kintone-customize-uploader ./customize-manifest.json",
     "start": "run-p -l 'build -- --watch' 'upload -- --watch'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "run-p -l lint:*",
-    "lint:eslint": "eslint --ext .js,.ts ./",
+    "lint:eslint": "eslint --ext .js,.ts,.mts ./",
     "lint:prettier": "prettier --check **/*.{json,md}",
     "fix": "run-p -l fix:*",
     "fix:eslint": "run-s 'lint:eslint -- --fix'",
-    "fix:prettier": "run-s 'lint:prettier -- --write'"
+    "fix:prettier": "run-s 'lint:prettier -- --write'",
+    "init:manifest": "zx ./scripts/init-manifest-json.mjs",
+    "init:dotenv": "zx ./scripts/init-dotenv.mjs"
   },
   "repository": {
     "type": "git",
@@ -40,10 +43,12 @@
     "@kintone/customize-uploader": "^7.0.2",
     "@kintone/dts-gen": "^7.0.3",
     "@types/node": "^20.3.2",
+    "dotenv-expand": "^10.0.0",
     "eslint": "^8.43.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.8",
     "typescript": "^5.1.3",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "zx": "^7.2.2"
   }
 }

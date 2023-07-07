@@ -1,5 +1,5 @@
 {
-  "app": "56",
+  "app": "123",
   "scope": "ALL",
   "desktop": {
     "js": ["./dist/my-kintone-customize.umd.js"],

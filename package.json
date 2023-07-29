@@ -1,7 +1,7 @@
 {
-  "name": "devcamp-boost-customize-template",
+  "name": "devcamp-boost-2023",
   "version": "1.0.0",
-  "description": "devCamp Boost用のkintoneカスタマイズ開発テンプレート",
+  "description": "kintoneカスタマイズ開発テンプレート。kintone devCamp Boost! (2023年)用です。",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kintone/devCamp-Boost-customize-template.git"
+    "url": "git+https://github.com/mshrtsr/devCamp-Boost-2023.git"
   },
   "files": [
     "dist"
@@ -35,9 +35,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kintone/devCamp-Boost-customize-template/issues"
+    "url": "https://github.com/mshrtsr/devCamp-Boost-2023/issues"
   },
-  "homepage": "https://github.com/kintone/devCamp-Boost-customize-template#readme",
+  "homepage": "https://github.com/mshrtsr/devCamp-Boost-2023#readme",
   "devDependencies": {
     "@cybozu/eslint-config": "^20.0.1",
     "@kintone/customize-uploader": "^7.0.2",

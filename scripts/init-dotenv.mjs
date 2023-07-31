@@ -6,7 +6,7 @@ import { existsSync } from "fs";
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.join(dirname, "../");
 
-const srcPath = path.join(projectRoot, ".env.template");
+const srcPath = path.join(projectRoot, "templates", ".env.template");
 const destPath = path.join(projectRoot, ".env");
 if (!existsSync(destPath)) {
   console.log("initialize .env");

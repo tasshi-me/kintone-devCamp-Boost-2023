@@ -11,7 +11,7 @@
     "start": "run-p -l 'build -- --watch' 'upload -- --watch'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "run-p -l lint:*",
-    "lint:eslint": "eslint --ext .js,.ts,.mts ./",
+    "lint:eslint": "eslint --ext .js,.mjs,cjs,.ts,.mts,.cts ./",
     "lint:prettier": "prettier --check **/*.{json,md}",
     "fix": "run-p -l fix:*",
     "fix:eslint": "run-s 'lint:eslint -- --fix'",

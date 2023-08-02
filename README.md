@@ -55,7 +55,7 @@ npm run setup
 
 カスタマイズを追加するアプリを作成します。
 
-### 4. リポジトリにアプリ情報を設定
+### 4. 認証情報・アプリ情報の設定
 
 以下のファイルを編集します。
 
@@ -66,11 +66,12 @@ npm run setup
 - `customize-manifest.json`
   - `app`: カスタマイズを追加するアプリのアプリ ID
 
-型定義ファイルを生成します。
+### 5. 型定義ファイルの生成
+
 以下のコマンドを実行してください。
 
 ```shell
 npm run generate:dts アプリID
 ```
 
-`src/@types`に`app-アプリID-fields.d.ts`というファイルが作成されていることを確認します。
+`src/@types/app-アプリID-fields.d.ts`というファイルが作成されます。

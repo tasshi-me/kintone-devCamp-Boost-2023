@@ -73,7 +73,7 @@ npm run setup
 npm run generate:dts アプリID
 ```
 
-`src/@types/app-アプリID-fields.d.ts`というファイルが作成されます。
+`src/@types/app-アプリID.d.ts`というファイルが作成されます。
 
 ### 手順 6. 動作確認
 

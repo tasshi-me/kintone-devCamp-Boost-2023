@@ -4,7 +4,8 @@
     "source.fixAll": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.tabSize": 2
   },
   "[json][jsonc][markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",

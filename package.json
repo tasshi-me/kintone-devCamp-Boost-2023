@@ -1,7 +1,7 @@
 {
   "name": "kintone-devcamp-boost-2023",
   "version": "1.0.0",
-  "description": "kintoneカスタマイズ開発テンプレート。kintone devCamp Boost! (2023年)用です。",
+  "description": "kintoneカスタマイズ開発テンプレート。2023年のkintone devCamp Boost!用です。",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mshrtsr/devCamp-Boost-2023.git"
+    "url": "git+https://github.com/mshrtsr/kintone-devCamp-Boost-2023.git"
   },
   "files": [
     "dist"
@@ -33,9 +33,9 @@
   "author": "Masaharu TASHIRO <masatsr.kit@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mshrtsr/devCamp-Boost-2023/issues"
+    "url": "https://github.com/mshrtsr/kintone-devCamp-Boost-2023/issues"
   },
-  "homepage": "https://github.com/mshrtsr/devCamp-Boost-2023#readme",
+  "homepage": "https://github.com/mshrtsr/kintone-devCamp-Boost-2023#readme",
   "devDependencies": {
     "@cybozu/eslint-config": "^20.0.1",
     "@kintone/customize-uploader": "^7.0.2",

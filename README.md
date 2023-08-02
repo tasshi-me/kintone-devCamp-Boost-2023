@@ -65,7 +65,7 @@ npm run setup
 - `customize-manifest.json`
   - `app`: カスタマイズを追加するアプリのアプリ ID
 
-### 手順 5. 型定義ファイルの生成
+### 手順 5. レコードの型定義ファイルの生成
 
 以下のコマンドを実行してください。
 
@@ -95,3 +95,48 @@ npm run start
 ```
 
 `src`ディレクトリ内のソースコードを変更すると自動的にカスタマイズのビルド・アップロードが行われます。
+
+### レコードの型定義ファイルの使い方
+
+イベントハンドラから取得したレコードに対して型を指定することができます。
+
+```typescript
+kintone.events.on("app.record.edit.submit", (event) => {
+  const record: App123.Record = event.record;
+  console.log(record);
+});
+```
+
+| 型                        | 説明                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| `AppアプリID.Record`      | 保存前のレコードの型定義です。<br>`app.record.edit.submit`イベントなどで使用します。 |
+| `AppアプリID.SavedRecord` | 保存後のレコードの型定義です。<br>`app.record.detail.show`イベントなどで使用します。 |
+
+### @kintone/rest-api-client の使い方
+
+@kintone/rest-api-client を使うことで kintone REST API を簡単に操作することができます。
+
+レコードの型には`AppアプリID.SavedRecord`と、`KintoneRestAPI.Record`または`KintoneRestAPI.PartialRecord`を組み合わせて使用してください。
+
+```typescript
+import { KintoneRestAPIClient } from "@kintone/rest-api-client";
+
+// クライアントの作成
+const client = new KintoneRestAPIClient();
+
+// レコードの取得
+const records = await client.record.getAllRecords<
+  KintoneRestAPI.Record<App123.SavedRecord>
+>({
+  app: 123,
+});
+
+// レコードの追加
+const recordsToAdd: Array<KintoneRestAPI.PartialRecord<App123.SavedRecord>> =
+  [{...}, {...}, {...}];
+client.record.addAllRecords({ app: 1, records: recordsToAdd });
+```
+
+詳しくはドキュメントを参照してください。
+
+https://cybozu.dev/ja/kintone/sdk/rest-api-client/kintone-javascript-client/

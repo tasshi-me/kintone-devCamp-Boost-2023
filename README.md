@@ -4,16 +4,24 @@ kintone devCamp Boost! (2023) のセッション用リポジトリです。
 
 https://page.cybozu.co.jp/-/devcampboost/
 
-kintone カスタマイズ開発を快適に行うためのツールを設定済みです。
+## 目次
 
-| ツール                                                                                   | 説明                                                                                                                                                                                                                                       |
-| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [TypeScript](https://www.typescriptlang.org/)                                            | 型による静的解析を利用できる JavaScript の代替言語(AltJS)です。                                                                                                                                                                            |
-| [Vite](https://vitejs.dev/)                                                              | 複数の JS ファイルを 1 つのファイルにまとめるバンドラーです。                                                                                                                                                                              |
-| [ESLint](https://eslint.org/)/[Prettier](https://prettier.io/)                           | リンターとフォーマッターです。構文の修正やインデント・改行などのスタイルの修正を自動的に行うことができます。<br/>設定は[@cybozu/eslint-config](https://cybozu.dev/ja/kintone/sdk/development-environment/eslint-config/)を使用しています。 |
-| [@kintone/rest-api-client](https://www.npmjs.com/package/@kintone/rest-api-client)       | kintone REST API を JavaScript から簡単に操作するためのライブラリです。                                                                                                                                                                    |
-| [@kintone/customize-uploader](https://www.npmjs.com/package/@kintone/customize-uploader) | kintone カスタマイズをアップロード/ダウンロードするための CLI ツールです                                                                                                                                                                   |
-| [@kintone/dts-gen](https://www.npmjs.com/package/@kintone/dts-gen)                       | kintone アプリから TypeScript 向けの型定義ファイル(.d.ts)を生成する CLI ツールです。                                                                                                                                                       |
+- [構成](#構成)
+- [セットアップ](#セットアップ)
+
+## 構成
+
+kintone カスタマイズを快適に開発できるように以下を設定済みです。
+
+| ツール                                                                                   | 説明                                                                                                                                                                                                                                            |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [TypeScript](https://www.typescriptlang.org/)                                            | JavaScript の代替言語(AltJS)です。<br>型による静的解析や、型推論による強力な補完機能を利用できるす。                                                                                                                                            |
+| [Vite](https://vitejs.dev/)                                                              | 複数の JS ファイルを 1 つのファイルにまとめるバンドラーです。                                                                                                                                                                                   |
+| [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)                         | リンターとフォーマッターです。<br/>構文の修正やインデント・改行などのスタイルの修正を自動的に行うことができます。<br/>設定は[@cybozu/eslint-config](https://cybozu.dev/ja/kintone/sdk/development-environment/eslint-config/)を使用しています。 |
+| [@kintone/rest-api-client](https://www.npmjs.com/package/@kintone/rest-api-client)       | kintone REST API を JavaScript から簡単に操作するためのライブラリです。                                                                                                                                                                         |
+| [@kintone/customize-uploader](https://www.npmjs.com/package/@kintone/customize-uploader) | kintone カスタマイズをアップロード/ダウンロードするための CLI ツールです                                                                                                                                                                        |
+| [@kintone/dts-gen](https://www.npmjs.com/package/@kintone/dts-gen)                       | kintone アプリから TypeScript 向けの型定義ファイル(.d.ts)を生成する CLI ツールです。                                                                                                                                                            |
+| [Renovate](https://github.com/marketplace/renovate)                                      | 依存ライブラリの更新 PR を自動作成してくれます。<br>設定は[cybozu/renovate-config](https://github.com/cybozu/renovate-config)を使用しています。                                                                                                 |
 
 ## セットアップ
 
@@ -28,28 +36,42 @@ kintone カスタマイズ開発を快適に行うためのツールを設定済
 - Visual Studio Code
   - https://code.visualstudio.com/
 
-### 2. リポジトリのセットアップ
+### 2. リポジトリのクローン・セットアップ
 
-リポジトリをクローンしてください
+リポジトリをクローンしてください。
 
 ```shell
 git clone git@github.com:mshrtsr/kintone-devCamp-Boost-2023.git
 ```
 
-リポジトリのディレクトリに移動し、依存パッケージのダウンロードを行ってください
+リポジトリのディレクトリに移動し、以下のコマンドを実行してください。
 
 ```shell
 cd kintone-devCamp-Boost-2023
 npm install
-```
-
-以下のコマンドが正常に終了することを確認します。
-
-```shell
-npm run build
+npm run setup
 ```
 
 ### 3. アプリの作成
 
-プラグインを追加するアプリを作成します。
-動作確認のため、任意のアプリで良いですが、セッションでは[営業支援パック](https://kintone-sol.cybozu.co.jp/apps/030-sfa-pack.html)の顧客情報アプリを利用します
+カスタマイズを追加するアプリを作成します。
+
+### 4. リポジトリにアプリ情報を設定
+
+以下のファイルを編集します。
+
+- `.env`
+  - `KINTONE_BASE_URL`: kintone 環境の URL（例：https://example.cybozu.com）
+  - `KINTONE_USERNAME`: ユーザ名
+  - `KINTONE_PASSWORD`: パスワード
+- `customize-manifest.json`
+  - `app`: カスタマイズを追加するアプリのアプリ ID
+
+型定義ファイルを生成します。
+以下のコマンドを実行してください。
+
+```shell
+npm run generate:dts アプリID
+```
+
+`src/@types`に`app-アプリID-fields.d.ts`というファイルが作成されていることを確認します。

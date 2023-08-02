@@ -47,7 +47,6 @@ git clone git@github.com:mshrtsr/kintone-devCamp-Boost-2023.git
 リポジトリのディレクトリに移動し、以下のコマンドを実行してください。
 
 ```shell
-cd kintone-devCamp-Boost-2023
 npm install
 npm run setup
 ```

@@ -11,4 +11,6 @@ const destPath = path.join(projectRoot, ".env");
 if (!existsSync(destPath)) {
   console.log("initialize .env");
   await copyFile(srcPath, destPath);
+} else {
+  console.log(".env already exists");
 }

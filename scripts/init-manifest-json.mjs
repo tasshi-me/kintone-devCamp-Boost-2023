@@ -15,4 +15,6 @@ const destPath = path.join(projectRoot, "customize-manifest.json");
 if (!existsSync(destPath)) {
   console.log("initialize customize-manifest.json");
   await copyFile(srcPath, destPath);
+} else {
+  console.log("customize-manifest.json already exists");
 }

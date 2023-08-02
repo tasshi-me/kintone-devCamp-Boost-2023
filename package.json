@@ -5,7 +5,6 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "postinstall": "run-s init:*",
     "build": "vite build",
     "upload": "dotenv kintone-customize-uploader ./customize-manifest.json",
     "start": "run-p -l 'build -- --watch' 'upload -- --watch'",
@@ -16,8 +15,10 @@
     "fix": "run-p -l fix:*",
     "fix:eslint": "run-s 'lint:eslint -- --fix'",
     "fix:prettier": "run-s 'lint:prettier -- --write'",
-    "init:manifest": "zx ./scripts/init-manifest-json.mjs",
-    "init:dotenv": "zx ./scripts/init-dotenv.mjs"
+    "setup": "run-s setup:*",
+    "setup:manifest": "zx ./scripts/init-manifest-json.mjs",
+    "setup:dotenv": "zx ./scripts/init-dotenv.mjs",
+    "generate:dts": "dotenv zx ./scripts/generate-dts.mjs"
   },
   "repository": {
     "type": "git",

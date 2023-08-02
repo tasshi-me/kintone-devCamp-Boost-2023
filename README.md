@@ -29,12 +29,11 @@ kintone カスタマイズを快適に開発できるように以下を設定済
 
 以下のツールをインストールします。
 
-- Node.js
-  - https://nodejs.org/ja/download
-- Git
-  - [https://git-scm.com/book/ja/v2/使い始める-Git のインストール](https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
-- Visual Studio Code
-  - https://code.visualstudio.com/
+| ツール             | ダウンロードリンク                                                                                                                                                                                              |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Node.js            | https://nodejs.org/ja/download                                                                                                                                                                                  |
+| Git                | [https://git-scm.com/book/ja/v2/使い始める-Git のインストール](https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB) |
+| Visual Studio Code | https://code.visualstudio.com/                                                                                                                                                                                  |
 
 ### 2. リポジトリのクローン・セットアップ
 

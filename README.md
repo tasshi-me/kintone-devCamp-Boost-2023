@@ -1,6 +1,6 @@
 # kintone-devCamp-Boost-2023
 
-kintone devCamp Boost! (2023) のセッション用リポジトリです。
+kintone devCamp Boost! (2023 年) のセッション用リポジトリです。
 
 https://page.cybozu.co.jp/-/devcampboost/
 

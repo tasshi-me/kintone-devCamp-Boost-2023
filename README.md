@@ -54,6 +54,9 @@ npm run setup
 
 カスタマイズを追加するアプリを作成します。
 
+セッションでは「営業支援パック」の「顧客管理」アプリにカスタマイズを追加します。
+https://jp.cybozu.help/k/ja/user/create_app/sales_pack.html
+
 ### 手順 4. 認証情報・アプリ情報の設定
 
 以下のファイルを編集します。

@@ -68,17 +68,7 @@ https://jp.cybozu.help/k/ja/user/create_app/sales_pack.html
 - `customize-manifest.json`
   - `app`: カスタマイズを追加するアプリのアプリ ID
 
-### 手順 5. レコードの型定義ファイルの生成
-
-以下のコマンドを実行してください。
-
-```shell
-npm run generate:dts アプリID
-```
-
-`src/@types/app-アプリID.d.ts`というファイルが作成されます。
-
-### 手順 6. 動作確認
+### 手順 5. 動作確認
 
 以下のコマンドを実行します。
 
@@ -99,7 +89,7 @@ npm run start
 
 `src`ディレクトリ内のソースコードを変更すると自動的にカスタマイズのビルド・アップロードが行われます。
 
-### レコードの型定義ファイルの使い方
+### レコードの型定義ファイルを使う
 
 イベントハンドラから取得したレコードに対して型を指定することができます。
 
@@ -114,6 +104,16 @@ kintone.events.on("app.record.edit.submit", (event) => {
 | ------------------------- | ------------------------------------------------------------------------------------ |
 | `AppアプリID.Record`      | 保存前のレコードの型定義です。<br>`app.record.edit.submit`イベントなどで使用します。 |
 | `AppアプリID.SavedRecord` | 保存後のレコードの型定義です。<br>`app.record.detail.show`イベントなどで使用します。 |
+
+#### 型定義ファイルの生成方法
+
+以下のコマンドを実行してください。
+
+```shell
+npm run generate:dts アプリID
+```
+
+`src/@types/app-アプリID.d.ts`というファイルが作成されます。
 
 ### @kintone/rest-api-client の使い方
 

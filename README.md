@@ -209,3 +209,7 @@ client.record.addAllRecords({ app: 1, records: recordsToAdd });
 詳しくはドキュメントを参照してください。
 
 https://cybozu.dev/ja/kintone/sdk/rest-api-client/kintone-javascript-client/
+
+## ライセンス
+
+[MIT](./LICENSE)

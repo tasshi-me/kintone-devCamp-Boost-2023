@@ -17,11 +17,13 @@ kintone カスタマイズを快適に開発できるように以下を設定済
 | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [TypeScript](https://www.typescriptlang.org/)                                            | JavaScript の代替言語(AltJS)です。<br>型による静的解析や、型推論による強力な補完機能を利用できるす。                                                                                                                                            |
 | [Vite](https://vitejs.dev/)                                                              | 複数の JS ファイルを 1 つのファイルにまとめるバンドラーです。                                                                                                                                                                                   |
+| [Vitest](https://vitest.dev/)                                                            | JavaScript 向けのテスティングフレームワークです。                                                                                                                                                                                               |
 | [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)                         | リンターとフォーマッターです。<br/>構文の修正やインデント・改行などのスタイルの修正を自動的に行うことができます。<br/>設定は[@cybozu/eslint-config](https://cybozu.dev/ja/kintone/sdk/development-environment/eslint-config/)を使用しています。 |
 | [@kintone/rest-api-client](https://www.npmjs.com/package/@kintone/rest-api-client)       | kintone REST API を JavaScript から簡単に操作するためのライブラリです。                                                                                                                                                                         |
 | [@kintone/customize-uploader](https://www.npmjs.com/package/@kintone/customize-uploader) | kintone カスタマイズをアップロード/ダウンロードするための CLI ツールです                                                                                                                                                                        |
 | [@kintone/dts-gen](https://www.npmjs.com/package/@kintone/dts-gen)                       | kintone アプリから TypeScript 向けの型定義ファイル(.d.ts)を生成する CLI ツールです。                                                                                                                                                            |
 | [Renovate](https://github.com/marketplace/renovate)                                      | 依存ライブラリの更新 PR を自動作成してくれます。<br>設定は[cybozu/renovate-config](https://github.com/cybozu/renovate-config)を使用しています。                                                                                                 |
+| [GitHub Actions](https://github.co.jp/features/actions)                                  | CI/CD サービスです。<br>自動的にコードをビルド・テスト・デプロイすることができます。                                                                                                                                                            |
 
 ## セットアップ
 
@@ -149,7 +151,23 @@ kintone.events.on(
 
 ### レコードの型定義ファイルを使う
 
-イベントハンドラから取得したレコードに対して型を指定することができます。
+@kintone/rest-api-client を使うことで レコードの型定義ファイルを生成することができます。
+
+生成した型は、JS API でレコードを扱う際に指定することができます。
+
+#### 型定義ファイルの生成方法
+
+以下のコマンドを実行してください。
+
+```shell
+npm run generate:dts アプリID
+```
+
+`src/@types/app-アプリID.d.ts`というファイルが作成されます。
+
+#### 型定義ファイルの使い方
+
+イベントハンドラから取得したレコードに対して型を指定してください。
 
 ```typescript
 kintone.events.on("app.record.edit.submit", (event) => {
@@ -162,16 +180,6 @@ kintone.events.on("app.record.edit.submit", (event) => {
 | ------------------------- | ------------------------------------------------------------------------------------ |
 | `AppアプリID.Record`      | 保存前のレコードの型定義です。<br>`app.record.edit.submit`イベントなどで使用します。 |
 | `AppアプリID.SavedRecord` | 保存後のレコードの型定義です。<br>`app.record.detail.show`イベントなどで使用します。 |
-
-#### 型定義ファイルの生成方法
-
-以下のコマンドを実行してください。
-
-```shell
-npm run generate:dts アプリID
-```
-
-`src/@types/app-アプリID.d.ts`というファイルが作成されます。
 
 ### @kintone/rest-api-client の使い方
 

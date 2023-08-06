@@ -37,9 +37,42 @@ kintone カスタマイズを快適に開発できるように以下を設定済
 
 ### 手順 2. リポジトリのクローン・セットアップ
 
+開発用テンプレートリポジトリをダウンロードしてセットアップします。
+
+GitHub アカウントを持っている場合は、テンプレートから自分のリポジトリを作成することを推奨しています。
+
+#### GitHub アカウントを持っている場合
+
+以下のページの「Use this template」ボタンから自分のリポジトリを作成してください。
+
+https://github.com/mshrtsr/kintone-devCamp-Boost-2023
+
+作成したリポジトリをクローンしてください。
+
+```shell
+## HTTPSの場合
+git clone https://github.com/作成したリポジトリのオーナー/リポジトリ名.git
+
+## SSHの場合
+git clone git@github.com:作成したリポジトリのオーナー/リポジトリ名.git
+```
+
+リポジトリのディレクトリに移動し、以下のコマンドを実行してください。
+
+```shell
+npm install
+npm run setup
+```
+
+#### GitHub アカウントを持っていない場合
+
 リポジトリをクローンしてください。
 
 ```shell
+## HTTPSの場合
+git clone https://github.com/mshrtsr/kintone-devCamp-Boost-2023.git
+
+## SSHの場合
 git clone git@github.com:mshrtsr/kintone-devCamp-Boost-2023.git
 ```
 

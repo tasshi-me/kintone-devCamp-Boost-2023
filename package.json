@@ -16,7 +16,6 @@
     "fix:eslint": "run-s \"lint:eslint -- --fix\"",
     "fix:prettier": "run-s \"lint:prettier -- --write\"",
     "setup": "run-s setup:*",
-    "setup:manifest": "zx ./scripts/init-manifest-json.mjs",
     "setup:dotenv": "zx ./scripts/init-dotenv.mjs",
     "generate:dts": "dotenv zx ./scripts/generate-dts.mjs"
   },

@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "run-p -l lint:*",
     "lint:eslint": "eslint --ext .js,.mjs,cjs,.ts,.mts,.cts ./",
-    "lint:prettier": "prettier --check **/*.{json,md}",
+    "lint:prettier": "prettier --check '**/*.{json,md,yaml,yml}'",
     "fix": "run-p -l fix:*",
     "fix:eslint": "run-s \"lint:eslint -- --fix\"",
     "fix:prettier": "run-s \"lint:prettier -- --write\"",

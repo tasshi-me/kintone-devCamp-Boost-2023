@@ -87,14 +87,20 @@ npm install
 npm run setup
 ```
 
-### 手順 3. アプリの作成
+### 手順 3. Visutal Studio Code のセットアップ
+
+Visual Studio Code でリポジトリをオープンします。
+
+拡張機能(Extensions)メニューを開いて検索バーに `@recommended` と記入し、`WORKSPACE RECOMMENDATIONS` に表示された拡張機能をインストールします。
+
+### 手順 4. アプリの作成
 
 カスタマイズを追加するアプリを作成します。
 
 セッションでは「営業支援パック」の「案件管理」アプリにカスタマイズを追加します。
 https://jp.cybozu.help/k/ja/user/create_app/sales_pack.html
 
-### 手順 4. 認証情報・アプリ情報の設定
+### 手順 5. 認証情報・アプリ情報の設定
 
 以下のファイルを編集します。
 
@@ -105,7 +111,7 @@ https://jp.cybozu.help/k/ja/user/create_app/sales_pack.html
 - `customize-manifest.json`
   - `app`: カスタマイズを追加するアプリのアプリ ID
 
-### 手順 5. 動作確認
+### 手順 6. 動作確認
 
 以下のコマンドを実行します。
 

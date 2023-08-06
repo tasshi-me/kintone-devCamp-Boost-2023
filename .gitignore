@@ -19,12 +19,6 @@ dist/
 **/.vs
 **/.idea
 
-# customize manifest
-customize-manifest.json
-
-# d.ts
-/src/@types/app-*.d.ts
-
 # secrets
 .env
 .envrc

@@ -37,7 +37,7 @@
   "homepage": "https://github.com/mshrtsr/kintone-devCamp-Boost-2023#readme",
   "devDependencies": {
     "@cybozu/eslint-config": "^20.0.1",
-    "@kintone/customize-uploader": "^7.0.2",
+    "@kintone/customize-uploader": "^7.0.4",
     "@kintone/dts-gen": "^7.0.3",
     "@types/node": "^20.4.8",
     "dotenv-cli": "^7.2.1",

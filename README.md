@@ -122,6 +122,31 @@ npm run start
 
 `src`ディレクトリ内のソースコードを変更すると自動的にカスタマイズのビルド・アップロードが行われます。
 
+### `kintone.events.on`のハンドラに型を指定する
+
+現在、@kintone/dts-gen の提供する型では`kintone.events.on`のイベントオブジェクトの型は any になっています。
+
+```
+declare namespace kintone {
+  namespace events {
+    function on(event: string | string[], handler: (event: any) => any): void;
+```
+
+[js-sdk/packages/dts-gen/kintone.d.ts at master · kintone/js-sdk](https://github.com/kintone/js-sdk/blob/5e19f7ddc604cae3d63a1b76ea46bb8dbfdb6ef1/packages/dts-gen/kintone.d.ts#L3)
+
+このテンプレートリポジトリではいくつかのイベントオブジェクトについて型定義を提供しています。
+これを指定することでイベントハンドラ内で受け取ったイベントを安全に扱うことができます。
+
+```typescript
+// eventTypes[イベントタイプ]で型を指定
+kintone.events.on(
+  "app.record.edit.submit",
+  (event: eventTypes["app.record.edit.submit"]) => {
+    console.log(event.appId);
+  }
+);
+```
+
 ### レコードの型定義ファイルを使う
 
 イベントハンドラから取得したレコードに対して型を指定することができます。
@@ -152,7 +177,7 @@ npm run generate:dts アプリID
 
 @kintone/rest-api-client を使うことで kintone REST API を簡単に操作することができます。
 
-レコードの型には`AppアプリID.SavedRecord`と、`KintoneRestAPI.Record`または`KintoneRestAPI.PartialRecord`を組み合わせて使用してください。
+レコードの型には dts-gen で生成した`AppアプリID.SavedRecord`と、`KintoneRestAPI.Record`または`KintoneRestAPI.PartialRecord`を組み合わせて指定してください。
 
 ```typescript
 import { KintoneRestAPIClient } from "@kintone/rest-api-client";

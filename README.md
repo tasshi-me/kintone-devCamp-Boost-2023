@@ -13,19 +13,19 @@ https://page.cybozu.co.jp/-/devcampboost/
 
 ## 構成
 
-kintone カスタマイズを快適に開発できるように以下を設定済みです。
+kintone カスタマイズを快適に開発できるように、以下のツール群を設定済みです。
 
-| ツール                                                                                   | 説明                                                                                                                                                                                                                                            |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [TypeScript](https://www.typescriptlang.org/)                                            | JavaScript の代替言語(AltJS)です。<br>型による静的解析や、型推論による強力な補完機能を利用できるす。                                                                                                                                            |
-| [Vite](https://vitejs.dev/)                                                              | 複数の JS ファイルを 1 つのファイルにまとめるバンドラーです。                                                                                                                                                                                   |
-| [Vitest](https://vitest.dev/)                                                            | JavaScript 向けのテスティングフレームワークです。                                                                                                                                                                                               |
-| [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)                         | リンターとフォーマッターです。<br/>構文の修正やインデント・改行などのスタイルの修正を自動的に行うことができます。<br/>設定は[@cybozu/eslint-config](https://cybozu.dev/ja/kintone/sdk/development-environment/eslint-config/)を使用しています。 |
-| [@kintone/rest-api-client](https://www.npmjs.com/package/@kintone/rest-api-client)       | kintone REST API を JavaScript から簡単に操作するためのライブラリです。                                                                                                                                                                         |
-| [@kintone/customize-uploader](https://www.npmjs.com/package/@kintone/customize-uploader) | kintone カスタマイズをアップロード/ダウンロードするための CLI ツールです                                                                                                                                                                        |
-| [@kintone/dts-gen](https://www.npmjs.com/package/@kintone/dts-gen)                       | kintone アプリから TypeScript 向けの型定義ファイル(.d.ts)を生成する CLI ツールです。                                                                                                                                                            |
-| [Renovate](https://github.com/marketplace/renovate)                                      | 依存ライブラリの更新 PR を自動作成してくれます。<br>設定は[cybozu/renovate-config](https://github.com/cybozu/renovate-config)を使用しています。                                                                                                 |
-| [GitHub Actions](https://github.co.jp/features/actions)                                  | CI/CD サービスです。<br>自動的にコードをビルド・テスト・デプロイすることができます。                                                                                                                                                            |
+| ツール                                                                                   | 説明                                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [TypeScript](https://www.typescriptlang.org/)                                            | JavaScript の代替言語(AltJS)です。<br>型による静的解析や、型推論による強力な補完機能を利用できます。                                                                                                                                              |
+| [Vite](https://vitejs.dev/)                                                              | 複数の JS ファイルを 1 つのファイルにまとめるバンドラーです。                                                                                                                                                                                     |
+| [Vitest](https://vitest.dev/)                                                            | JavaScript 向けのテスティングフレームワークです。                                                                                                                                                                                                 |
+| [ESLint](https://eslint.org/) / [Prettier](https://prettier.io/)                         | リンターとフォーマッターです。<br/>構文の修正やインデント・改行などのスタイルの修正を自動的に行うことができます。<br/>設定は [@cybozu/eslint-config](https://cybozu.dev/ja/kintone/sdk/development-environment/eslint-config/) を使用しています。 |
+| [@kintone/rest-api-client](https://www.npmjs.com/package/@kintone/rest-api-client)       | kintone REST API を JavaScript から簡単に操作するためのライブラリです。                                                                                                                                                                           |
+| [@kintone/customize-uploader](https://www.npmjs.com/package/@kintone/customize-uploader) | kintone カスタマイズをアップロード/ダウンロードする CLI ツールです                                                                                                                                                                                |
+| [@kintone/dts-gen](https://www.npmjs.com/package/@kintone/dts-gen)                       | kintone アプリから TypeScript 向けの型定義ファイル(.d.ts)を生成する CLI ツールです。                                                                                                                                                              |
+| [Renovate](https://github.com/marketplace/renovate)                                      | 依存ライブラリの更新 PR を自動作成できるサービスです。<br>設定は [cybozu/renovate-config](https://github.com/cybozu/renovate-config) を使用しています。                                                                                           |
+| [GitHub Actions](https://github.co.jp/features/actions)                                  | CI/CD サービスです。<br>自動的にコードをビルド・テスト・デプロイすることができます。                                                                                                                                                              |
 
 ## セットアップ
 
@@ -124,6 +124,8 @@ npm run upload
 
 ## 開発方法
 
+### カスタマイズのビルド・アップロード
+
 以下のコマンドを実行します。
 
 ```shell
@@ -132,7 +134,36 @@ npm run start
 
 `src`ディレクトリ内のソースコードを変更すると自動的にカスタマイズのビルド・アップロードが行われます。
 
-### `kintone.events.on`のハンドラに型を指定する
+### 自動テストの実行
+
+※VSCode の Vitest 拡張機能をインストールしている場合は拡張機能からテストを実行することを推奨します。
+
+以下のコマンドを実行します。
+ファイルの変更に応じてテストは自動的に再実行されます。
+
+```shell
+npm run test
+```
+
+テストの書き方は Vitest の公式ドキュメントを参照してください。
+
+[Getting Started | Guide | Vitest](https://vitest.dev/guide/#writing-tests)
+
+### リンター・フォーマッターの実行
+
+※VSCode の ESLint・Prettier 拡張機能をインストールしている場合はファイル保存時に自動実行されます。
+
+以下のコマンドを実行します。
+
+```shell
+# チェックのみ
+npm run lint
+
+# 自動修正
+npm run fix
+```
+
+### Tips 1. `kintone.events.on`のハンドラに型を指定する
 
 現在、@kintone/dts-gen の提供する型では`kintone.events.on`のイベントオブジェクトの型は any になっています。
 
@@ -157,7 +188,7 @@ kintone.events.on(
 );
 ```
 
-### @kintone/dts-gen の使い方
+### Tips 2. @kintone/dts-gen の使い方
 
 @kintone/dts-gen を使うことで レコードの型定義ファイルを生成することができます。
 
@@ -189,7 +220,7 @@ kintone.events.on("app.record.edit.submit", (event) => {
 | `AppアプリID.Record`      | 保存前のレコードの型定義です。<br>`app.record.edit.submit`イベントなどで使用します。 |
 | `AppアプリID.SavedRecord` | 保存後のレコードの型定義です。<br>`app.record.detail.show`イベントなどで使用します。 |
 
-### @kintone/rest-api-client の使い方
+### Tips 3. @kintone/rest-api-client の使い方
 
 @kintone/rest-api-client を使うことで kintone REST API を簡単に操作することができます。
 

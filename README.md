@@ -39,11 +39,18 @@ kintone カスタマイズを快適に開発できるように、以下のツー
 | Git                | [https://git-scm.com/book/ja/v2/使い始める-Git のインストール](https://git-scm.com/book/ja/v2/%E4%BD%BF%E3%81%84%E5%A7%8B%E3%82%81%E3%82%8B-Git%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB) |
 | Visual Studio Code | https://code.visualstudio.com/                                                                                                                                                                                  |
 
+※Git のインストールは任意です。
+
 ### 手順 2. リポジトリのクローン・セットアップ
 
 開発用テンプレートリポジトリをダウンロードしてセットアップします。
 
-GitHub アカウントを持っている場合は、テンプレートから自分のリポジトリを作成することを推奨しています。
+Git のインストール状況と GitHub アカウントの有無で手順が異なります。  
+作業内容をセッション後も保存するために Git と GitHub アカウントを用意することを推奨しています。
+
+- [Git をインストールしている・GitHub アカウントがある](#github-アカウントを持っている場合)
+- [Git をインストールしている・GitHub アカウントがない](#github-アカウントを持っていない場合)
+- [Git をインストールしていない](#git-を使用しない場合)
 
 #### GitHub アカウントを持っている場合
 
@@ -79,6 +86,21 @@ git clone https://github.com/mshrtsr/kintone-devCamp-Boost-2023.git
 ## SSHの場合
 git clone git@github.com:mshrtsr/kintone-devCamp-Boost-2023.git
 ```
+
+リポジトリのディレクトリに移動し、以下のコマンドを実行してください。
+
+```shell
+npm install
+npm run setup
+```
+
+#### Git を使用しない場合
+
+以下の手順でリポジトリをダウンロードしてください
+
+- [リポジトリのトップページ](https://github.com/mshrtsr/kintone-devCamp-Boost-2023)にアクセス
+- このページの「Code」→「Download ZIP」から ZIP ファイルをダウンロード
+- ダウンロードした ZIP ファイルを展開してください
 
 リポジトリのディレクトリに移動し、以下のコマンドを実行してください。
 

@@ -2,7 +2,12 @@
 
 kintone devCamp Boost! (2023 年) のセッション用リポジトリです。
 
-https://page.cybozu.co.jp/-/devcampboost/
+|                        |                                                                   |
+| ---------------------- | ----------------------------------------------------------------- |
+| イベントホームページ   | https://page.cybozu.co.jp/-/devcampboost/                         |
+| セッション資料         | https://speakerdeck.com/tasshi/kintone-devcamp-boost-2023         |
+| テンプレートリポジトリ | https://github.com/mshrtsr/kintone-devCamp-Boost-2023/            |
+| 完成サンプルリポジトリ | https://github.com/mshrtsr/kintone-customize-auto-calc-total-cost |
 
 ## 目次
 

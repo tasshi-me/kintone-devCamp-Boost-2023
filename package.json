@@ -7,7 +7,7 @@
   "scripts": {
     "build": "vite build",
     "upload": "dotenv kintone-customize-uploader ./customize-manifest.json",
-    "start": "run-p -l \"build -- --watch\" \"upload -- --watch\"",
+    "start": "run-p -l \"build -- --watch\" \"upload -- -- --watch\"",
     "test": "vitest",
     "lint": "run-p -l lint:*",
     "lint:eslint": "eslint --ext .js,.mjs,cjs,.ts,.mts,.cts ./",

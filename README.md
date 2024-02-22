@@ -6,8 +6,8 @@ kintone devCamp Boost! (2023 年) のセッション用リポジトリです。
 | ---------------------- | ----------------------------------------------------------------- |
 | イベントホームページ   | https://page.cybozu.co.jp/-/devcampboost/                         |
 | セッション資料         | https://speakerdeck.com/tasshi/kintone-devcamp-boost-2023         |
-| テンプレートリポジトリ | https://github.com/mshrtsr/kintone-devCamp-Boost-2023/            |
-| 完成サンプルリポジトリ | https://github.com/mshrtsr/kintone-customize-auto-calc-total-cost |
+| テンプレートリポジトリ | https://github.com/tasshi-me/kintone-devCamp-Boost-2023/            |
+| 完成サンプルリポジトリ | https://github.com/tasshi-me/kintone-customize-auto-calc-total-cost |
 
 ## 目次
 
@@ -61,7 +61,7 @@ Git のインストール状況と GitHub アカウントの有無で手順が�
 
 以下のページの「Use this template」ボタンから自分のリポジトリを作成してください。
 
-https://github.com/mshrtsr/kintone-devCamp-Boost-2023
+https://github.com/tasshi-me/kintone-devCamp-Boost-2023
 
 作成したリポジトリをクローンしてください。
 
@@ -86,10 +86,10 @@ npm run setup
 
 ```shell
 ## HTTPSの場合
-git clone https://github.com/mshrtsr/kintone-devCamp-Boost-2023.git
+git clone https://github.com/tasshi-me/kintone-devCamp-Boost-2023.git
 
 ## SSHの場合
-git clone git@github.com:mshrtsr/kintone-devCamp-Boost-2023.git
+git clone git@github.com:tasshi-me/kintone-devCamp-Boost-2023.git
 ```
 
 リポジトリのディレクトリに移動し、以下のコマンドを実行してください。
@@ -103,7 +103,7 @@ npm run setup
 
 以下の手順でリポジトリをダウンロードしてください
 
-- [リポジトリのトップページ](https://github.com/mshrtsr/kintone-devCamp-Boost-2023)にアクセス
+- [リポジトリのトップページ](https://github.com/tasshi-me/kintone-devCamp-Boost-2023)にアクセス
 - このページの「Code」→「Download ZIP」から ZIP ファイルをダウンロード
 - ダウンロードした ZIP ファイルを展開してください
 
